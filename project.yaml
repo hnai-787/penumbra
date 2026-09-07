@@ -1,0 +1,57 @@
+name: Firewall Rule Engine (C++)
+slug: firewall-rule-engine-cpp
+
+category: cybersecurity
+subcategory: "Programming Fundamentals coursework"
+
+status: completed
+
+visibility: public
+
+description:
+  short: "A C++ rule-based firewall simulator that evaluates network packets against an ordered allow/deny rule set."
+  long: |
+    Reads an ordered list of firewall rules (source/destination IP or last-octet
+    range, protocol, ALLOW/DENY) from a text file, then evaluates a set of
+    sample packets against them top-down with a default-deny fallback,
+    writing each decision to an output file. Built as a Programming
+    Fundamentals course project (Air University, Semester 1, Fall 2023) to
+    demonstrate ordered rule evaluation, string parsing, and basic input
+    validation in C++.
+
+technologies: ["C++"]
+tags: ["cybersecurity", "firewall", "cpp", "networking", "rule-engine"]
+
+repository:
+  provider: github
+  visibility: public
+  sync: true
+
+portfolio:
+  enabled: true
+  featured: false
+
+documentation:
+  readme: true
+  case_study: false
+
+dates:
+  started: null
+  completed: null
+
+links:
+  github: null
+  demo: null
+  documentation: null
+
+assets:
+  hero: null
+  screenshots:
+    - screenshots
+
+achievements: []
+
+metrics:
+  - label: "Sample packets correctly classified"
+    value: "9/9"
+    verified: true
