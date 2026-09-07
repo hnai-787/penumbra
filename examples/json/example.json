@@ -1,0 +1,11 @@
+{
+  "default_action": "deny",
+  "rules": [
+    { "id": "allow-web", "action": "allow", "protocol": ["tcp"],
+      "source": ["any"], "destination": ["192.0.2.10/32"], "destination_port": ["443", "80"] },
+    { "id": "shadowed-by-allow-web", "action": "deny", "protocol": ["tcp"],
+      "source": ["any"], "destination": ["192.0.2.10/32"], "destination_port": ["443"] },
+    { "id": "allow-dns", "action": "allow", "protocol": ["udp"],
+      "source": ["10.0.0.0/24"], "destination": ["any"], "destination_port": ["53"] }
+  ]
+}

@@ -9,18 +9,25 @@ status: completed
 visibility: public
 
 description:
-  short: "A C++ rule-based firewall simulator that evaluates network packets against an ordered allow/deny rule set."
+  short: "fwlint: an offline C++ static analyzer that finds shadowed, redundant, correlated, and generalized rules in real Cisco ACL / JSON firewall policies, with witness packets and SARIF output."
   long: |
-    Reads an ordered list of firewall rules (source/destination IP or last-octet
-    range, protocol, ALLOW/DENY) from a text file, then evaluates a set of
-    sample packets against them top-down with a default-deny fallback,
-    writing each decision to an output file. Built as a Programming
-    Fundamentals course project (Air University, Semester 1, Fall 2023) to
-    demonstrate ordered rule evaluation, string parsing, and basic input
-    validation in C++.
+    Started as a Programming Fundamentals course project (Air University,
+    Semester 1, Fall 2023) -- a rule-based firewall packet simulator -- and
+    was rebuilt into fwlint, a firewall ruleset anomaly analyzer. Parses a
+    real (bounded-subset) Cisco IOS extended ACL or a canonical JSON policy
+    into an exact 5-tuple packet-space representation (axis-aligned box
+    decomposition -- a published alternative to BDD-based analysis), then
+    detects the four canonical Al-Shaer/Hamed anomaly types (shadowing,
+    redundancy, correlation, generalization) including whole-policy
+    "collective shadowing" where several earlier rules jointly make a later
+    rule unreachable even though no single one does alone. Every finding
+    includes a concrete witness packet. Outputs human-readable text,
+    structured JSON, or SARIF 2.1.0 (for CI/GitHub code-scanning
+    integration). The original coursework program is preserved unmodified
+    under archive/academic-original/.
 
-technologies: ["C++"]
-tags: ["cybersecurity", "firewall", "cpp", "networking", "rule-engine"]
+technologies: ["C++", "C++20", "CMake", "vcpkg", "nlohmann-json", "Catch2", "SARIF"]
+tags: ["cybersecurity", "firewall", "cpp", "networking", "static-analysis", "policy-anomaly-detection", "sarif", "cli-tool"]
 
 repository:
   provider: github
@@ -52,6 +59,18 @@ assets:
 achievements: []
 
 metrics:
-  - label: "Sample packets correctly classified"
+  - label: "Sample packets correctly classified (original coursework artifact)"
     value: "9/9"
+    verified: true
+  - label: "Unit test assertions passing (Catch2)"
+    value: "125/125 (41 test cases)"
+    verified: true
+  - label: "Anomaly types detected against hand-built 12-rule example ACL"
+    value: "5/5 (shadowing, collective shadowing, redundancy, correlation, generalization)"
+    verified: true
+  - label: "Analysis time, 301-rule mostly-disjoint ACL"
+    value: "~0.6s"
+    verified: true
+  - label: "Analysis time, 301-rule pathological (heavily overlapping) ACL"
+    value: "~1.5s, 15,926 findings"
     verified: true

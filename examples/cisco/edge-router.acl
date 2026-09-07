@@ -1,0 +1,39 @@
+! Example ACL demonstrating all four anomaly types plus a clean baseline.
+! Loosely modeled after the kind of edge-router ACL fwlint targets.
+
+ip access-list extended EDGE-IN
+
+! 10-20: collective shadowing -- rules 10 and 20 together cover all of
+! 10.0.0.0/24's HTTPS traffic, so rule 30's DENY can never fire even though
+! neither rule 10 nor rule 20 alone covers it.
+ 10 permit tcp 10.0.0.0 0.0.0.127 any eq 443
+ 20 permit tcp 10.0.0.128 0.0.0.127 any eq 443
+ 30 deny tcp 10.0.0.0 0.0.0.255 any eq 443
+
+! 40-50: direct pairwise shadowing -- rule 50 can never fire, rule 40 already
+! allows all of 10.0.1.0/24 regardless of protocol.
+ 40 permit ip 10.0.1.0 0.0.0.255 any
+ 50 deny tcp 10.0.1.0 0.0.0.255 any eq 22
+
+! 60-70: redundancy -- rule 70 adds nothing; rule 60 already allows it.
+ 60 permit udp 10.0.2.0 0.0.0.255 any eq 53
+ 70 permit udp 10.0.2.0 0.0.0.255 any eq 53
+
+! 80-90: generalization -- a specific deny exception followed by a broader
+! allow default. Likely intentional, but flagged for review.
+ 80 deny tcp host 10.0.3.50 any eq 3389
+ 90 permit tcp 10.0.3.0 0.0.0.255 any eq 3389
+
+! 100-110: correlation -- partial overlap, conflicting actions, neither
+! rule contains the other. (Two CIDR-style address blocks can never
+! partially overlap -- they're always nested or disjoint -- so this
+! example overlaps in the port dimension instead: 8050-8100 is decided by
+! whichever rule the operator intended, but the *other* rule's exclusive
+! range still depends on order.)
+100 permit tcp 10.0.4.0 0.0.0.255 any range 8000 8100
+110 deny tcp 10.0.4.0 0.0.0.255 any range 8050 8150
+
+! 120: unrelated clean rule, no anomaly.
+120 permit tcp any host 198.51.100.10 eq 443
+
+! implicit deny applies after this

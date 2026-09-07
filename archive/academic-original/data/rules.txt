@@ -1,0 +1,23 @@
+# Rule format:
+# RuleNo Field Value Decision
+#
+# Field:
+# SRC = Source IP
+# DST = Destination IP
+# PRO = Protocol
+#
+# Value:
+# Exact IP: 192.168.1.20
+# Last-octet range: 192.168.1.1-10
+# Protocol: TCP, UDP, ICMP
+#
+# Rules are checked from top to bottom. First match wins.
+
+1 SRC 10.0.0.5 DENY
+2 DST 192.168.1.1-10 DENY
+3 DST 192.168.255.255 ALLOW
+4 PRO ICMP DENY
+5 PRO UDP ALLOW
+6 SRC 172.16.5.20-30 ALLOW
+7 DST 8.8.8.8 DENY
+8 PRO TCP ALLOW
