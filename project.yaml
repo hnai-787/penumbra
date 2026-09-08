@@ -1,5 +1,5 @@
-name: Firewall Rule Engine (C++)
-slug: firewall-rule-engine-cpp
+name: fwlint
+slug: fwlint
 
 category: cybersecurity
 subcategory: "Programming Fundamentals coursework"

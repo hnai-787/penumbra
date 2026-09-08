@@ -1,4 +1,4 @@
-# Firewall Rule Engine → fwlint (Firewall Ruleset Anomaly Analyzer)
+# fwlint — Firewall Ruleset Anomaly Analyzer
 
 ## Course Information
 
