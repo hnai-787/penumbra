@@ -1,6 +1,8 @@
-# fwlint — Firewall Ruleset Anomaly Analyzer
+# Penumbra — Firewall Ruleset Anomaly Analyzer
 
-![fwlint banner](assets/brand/fwlint-readme-banner.png)
+![penumbra banner](assets/brand/penumbra-readme-banner.png)
+
+*Ships as the `fwlint` CLI/library — see below.*
 
 
 ## Course Information
@@ -165,7 +167,7 @@ fwlint analyze/simulate (src/main.cpp)
 
 ## How It Works
 
-![How fwlint works](assets/brand/fwlint-how-it-works.png)
+![How penumbra works](assets/brand/penumbra-how-it-works.png)
 
 ## Repository Structure
 

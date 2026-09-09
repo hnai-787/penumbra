@@ -1,5 +1,5 @@
-name: fwlint
-slug: fwlint
+name: Penumbra
+slug: penumbra
 
 category: cybersecurity
 subcategory: "Programming Fundamentals coursework"
@@ -47,12 +47,12 @@ dates:
   completed: null
 
 links:
-  github: https://github.com/Hussain-Ali-787/fwlint
+  github: https://github.com/Hussain-Ali-787/penumbra
   demo: null
   documentation: null
 
 assets:
-  hero: assets/brand/fwlint-readme-banner.png
+  hero: assets/brand/penumbra-readme-banner.png
   screenshots:
     - screenshots
 
