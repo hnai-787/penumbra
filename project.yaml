@@ -52,7 +52,7 @@ links:
   documentation: null
 
 assets:
-  hero: null
+  hero: assets/brand/fwlint-readme-banner.png
   screenshots:
     - screenshots
 

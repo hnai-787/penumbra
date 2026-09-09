@@ -1,5 +1,8 @@
 # fwlint — Firewall Ruleset Anomaly Analyzer
 
+![fwlint banner](assets/brand/fwlint-readme-banner.png)
+
+
 ## Course Information
 
 | Field | Details |
@@ -159,6 +162,10 @@ fwlint analyze/simulate (src/main.cpp)
         v
  Report renderers (report_text/json/sarif.cpp)
 ```
+
+## How It Works
+
+![How fwlint works](assets/brand/fwlint-how-it-works.png)
 
 ## Repository Structure
 
