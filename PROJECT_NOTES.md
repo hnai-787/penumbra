@@ -19,7 +19,7 @@ project on 2026-09-07.
 ## Assumptions
 
 - `status: completed` in `project.yaml` reflects that this was a finished,
-  submitted coursework assignment, not that it received a specific grade
+  submitted early version, not that it received a specific grade
   (no grade information exists in the source material).
 
 ## Remaining work
@@ -41,7 +41,7 @@ unreachable, redundant, and order-dependent rules — a real, bounded,
 differentiated problem, not "yet another packet matcher."
 
 The original program and its data/output were preserved unmodified under
-`archive/academic-original/` — nothing about the coursework submission was
+`archive/original/` — nothing about the original submission was
 deleted or altered.
 
 ### Key engineering decisions and why

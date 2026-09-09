@@ -16,8 +16,8 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 ### Added
 
 - Rebuilt the project as **fwlint**, a firewall ruleset anomaly analyzer,
-  on top of the original coursework packet simulator (preserved unmodified
-  under `archive/academic-original/`).
+  on top of the original version packet simulator (preserved unmodified
+  under `archive/original/`).
 - Exact 5-tuple (protocol/srcIP/srcPort/dstIP/dstPort) packet-space engine
   using axis-aligned box decomposition (`include/fwlint/interval.h`,
   `include/fwlint/box.h`) as an exact, dependency-free alternative to a

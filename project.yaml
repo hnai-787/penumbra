@@ -2,7 +2,7 @@ name: Penumbra
 slug: penumbra
 
 category: cybersecurity
-subcategory: "Programming Fundamentals coursework"
+subcategory: "Programming Fundamentals"
 
 status: completed
 
@@ -11,9 +11,8 @@ visibility: public
 description:
   short: "fwlint: an offline C++ static analyzer that finds shadowed, redundant, correlated, and generalized rules in real Cisco ACL / JSON firewall policies, with witness packets and SARIF output."
   long: |
-    Started as a Programming Fundamentals course project (Air University,
-    Semester 1, Fall 2023) -- a rule-based firewall packet simulator -- and
-    was rebuilt into fwlint, a firewall ruleset anomaly analyzer. Parses a
+    Started as a small rule-based firewall packet simulator and was
+    rebuilt into fwlint, a firewall ruleset anomaly analyzer. Parses a
     real (bounded-subset) Cisco IOS extended ACL or a canonical JSON policy
     into an exact 5-tuple packet-space representation (axis-aligned box
     decomposition -- a published alternative to BDD-based analysis), then
@@ -23,8 +22,8 @@ description:
     rule unreachable even though no single one does alone. Every finding
     includes a concrete witness packet. Outputs human-readable text,
     structured JSON, or SARIF 2.1.0 (for CI/GitHub code-scanning
-    integration). The original coursework program is preserved unmodified
-    under archive/academic-original/.
+    integration). The original program is preserved unmodified
+    under archive/original/.
 
 technologies: ["C++", "C++20", "CMake", "vcpkg", "nlohmann-json", "Catch2", "SARIF"]
 tags: ["cybersecurity", "firewall", "cpp", "networking", "static-analysis", "policy-anomaly-detection", "sarif", "cli-tool"]
@@ -59,7 +58,7 @@ assets:
 achievements: []
 
 metrics:
-  - label: "Sample packets correctly classified (original coursework artifact)"
+  - label: "Sample packets correctly classified (original artifact)"
     value: "9/9"
     verified: true
   - label: "Unit test assertions passing (Catch2)"
