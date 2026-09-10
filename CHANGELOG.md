@@ -9,7 +9,16 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 
+- `archive/original/` and the root `data/`, `output/`, and `screenshots/`
+  folders (all original-artifact copies, none referenced by current code)
+  moved out of this repository into a personal academic-archive repo;
+  README updated with a `TODO` pointer until that repo is published.
+- Removed `PROJECT_NOTES.md`.
+
 ### Fixed
+
+- README's Repository Structure still said `firewall-rule-engine-cpp/`
+  from before the product-name rebrand; corrected to `penumbra/`.
 
 ## [1.0.0] - 2026-09-08
 

@@ -7,9 +7,9 @@
 
 This started as an early, simpler version (a rule-matching packet simulator)
 and has since been rebuilt into **fwlint**, an offline static analyzer for
-firewall rulesets. The original original program is preserved unmodified
-under [`archive/original/`](archive/original/) — nothing
-about the original version was deleted.
+firewall rulesets. The original program has been moved out of this
+repository into a personal academic-archive repo.
+`TODO`: link to that repo once it's published.
 
 ## Overview
 
@@ -163,9 +163,8 @@ fwlint analyze/simulate (src/main.cpp)
 ## Repository Structure
 
 ```text
-firewall-rule-engine-cpp/
+penumbra/
   README.md
-  PROJECT_NOTES.md
   CHANGELOG.md
   CMakeLists.txt
   build.sh                    # configure + build with CMake/vcpkg/MinGW
@@ -176,10 +175,11 @@ firewall-rule-engine-cpp/
     cisco/edge-router.acl      # hand-built example exercising all 4 anomaly types
     cisco/benchmark-300.acl, benchmark-pathological-300.acl
     json/example.json
-  archive/original/   # the original program, untouched
-  data/, output/, screenshots/ # original artifacts
   project.yaml
 ```
+
+The original program, its data, and its screenshots are preserved
+outside this repository (see the note at the top of this README).
 
 ## Building from source
 
@@ -285,8 +285,8 @@ Rules evaluated: 1
    `./build/fwlint_tests.exe` — 41 test cases / 125 assertions, all passing.
 4. Run `./build/fwlint.exe analyze examples/cisco/edge-router.acl` and
    compare against the worked example above.
-5. For the original artifact, see
-   `archive/original/` and the "Original Results" section below.
+5. For the original artifact, see the "Original Results" section below
+   (the original program is archived outside this repository).
 
 ## Testing
 
@@ -328,8 +328,8 @@ under Future Enhancements.
 
 ## Methodology
 
-1. Preserved the original program unmodified under
-   `archive/original/` (see PROJECT_NOTES.md).
+1. Preserved the original program unmodified, now archived outside this
+   repository (see the note at the top of this README).
 2. Designed the exact packet-space algebra (interval sets → 5-dimensional
    boxes → axis-slicing subtraction), grounded in the Al-Shaer/Hamed
    firewall-policy-anomaly taxonomy and Hu/Ahn/Kulkarni's rule-space
@@ -362,8 +362,8 @@ under Future Enhancements.
 
 ## Original Results (original artifact)
 
-Preserved from the original submission — see
-`archive/original/` for the untouched program and data:
+Preserved from the original submission, now archived outside this
+repository (see the note at the top of this README):
 
 Verified against the sample dataset (8 rules, 9 packets), all correctly
 classified, e.g.:

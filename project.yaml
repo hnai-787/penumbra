@@ -46,14 +46,13 @@ dates:
   completed: null
 
 links:
-  github: https://github.com/Hussain-Ali-787/penumbra
+  github: https://github.com/hnai-787/penumbra
   demo: null
   documentation: null
 
 assets:
   hero: assets/brand/penumbra-readme-banner.png
-  screenshots:
-    - screenshots
+  screenshots: []
 
 achievements: []
 
